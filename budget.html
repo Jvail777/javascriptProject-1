@@ -8,25 +8,27 @@
     <link rel="stylesheet" href="styles.css"></link>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
+
 <header>
     <h1>Monthly Budget</h1>
 </header>
 <body>
-    <section id="container" style="margin-top:5px">
-        <form id="homepage">
-            <div>
+    <section id="container" >
+        <p id="start">Starting Budget : $0</p>
+        <p id="remaining">Remaining Budget: $0</p>
+        <form id="maxBudget">
+            
                 <label>Starting Budget:</label>
-                <input id="number" type="number" name="quantity"></div>
-                <label>Remaining Budget:</label>
-                <input id="number2" type="number" name="quantity2"></input>
-            </div>
-            <button id="button">Set Budget</button>
+                <input id="number" type="number" name="quantity"></input>
+                
+            
+            <button id="button" class="myButton">Set Budget</button>
         </form>
     </section>
     <section>
         <div class="dropdown">
-                <label>Type of Purchase:</label>
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <label id="mobilePurchase">Type of Purchase:</label>
+                    <button id="Drop" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Dropdown
                     </button>
                     <ul class="dropdown-menu">
@@ -37,16 +39,91 @@
                     </ul>
         </div>
     </section>
-    <section>
+   
+    <section class="transactionList">
         <form id="subcontainer">
             <div>
                 <label>Transaction:</label>
-                <input id="transaction" type="text" name="transaction"></div>
+                <input id="transaction" type="text" name="transaction"></input>
                 <label>Amount:</label>
                 <input id="numberAmount" type="number" name="quantityAmount"></input>
             </div>
         </form>
+        <table class="tableContainer">
+            <thead>
+                <tr class="transactionRow">
+                    <th class="nameColumn">Name</th>
+                    <th class="categoryColumn">Category</th>
+                    <th class="amountColumn">Amount</th>
+                    <th class="trashColumn">Trash</th>
+                </tr>
+            </thead>
+            <tbody class="transactions"></tbody>
+        </table>
     </section>
+
+    <section class="categories-section">
+        <div class="category bills">
+          <div class="section-title">
+            <p>Bills</p>
+            <p class="section-total bills">$0</p>
+          </div>
+  
+          <form class="add-item bills">
+            <input type="text" placeholder="Item Name">
+            <input type="number" placeholder="Item Cost">
+            <button class="myButton" category="bills">+</button>
+          </form>
+  
+          <ul class="item-list bills"></ul>
+        </div>
+  
+        <div class="category food">
+          <div class="section-title">
+            <p>Food</p>
+            <p class="section-total food">$0</p>
+          </div>
+  
+          <form class="add-item food">
+            <input type="text" placeholder="Item Name">
+            <input type="number" placeholder="Item Cost">
+            <button class="myButton" category="food">+</button>
+          </form>
+  
+          <ul class="item-list food"></ul>
+        </div>
+  
+        <div class="category clothing">
+          <div class="section-title">
+            <p>Clothing</p>
+            <p class="section-total clothing">$0</p>
+          </div>
+  
+          <form class="add-item clothing">
+            <input type="text" placeholder="Item Name">
+            <input type="number" placeholder="Item Cost">
+            <button class="myButton" category="clothing">+</button>
+          </form>
+          
+          <ul class="item-list clothing"></ul>
+        </div>
+  
+        <div class="category entertainment">
+          <div class="section-title">
+            <p>Entertainment</p>
+            <p class="section-total entertainment">$0</p>
+          </div>
+  
+          <form class="add-item entertainment">
+            <input type="text" placeholder="Item Name">
+            <input type="number" placeholder="Item Cost">
+            <button class="myButton" category="entertainment">+</button>
+          </form>
+  
+          <ul class="item-list entertainment"></ul>
+        </div>
+      </section>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 <script src="budget.js"></script>
