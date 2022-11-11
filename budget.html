@@ -10,7 +10,6 @@
 </head>
 
 <header>
-    
     <h1>Monthly Budget</h1>
 </header>
 <body>
@@ -40,15 +39,27 @@
                     </ul>
         </div>
     </section>
-    <section>
+   
+    <section class="transactionList">
         <form id="subcontainer">
             <div>
                 <label>Transaction:</label>
-                <input id="transaction" type="text" name="transaction"></div>
+                <input id="transaction" type="text" name="transaction"></input>
                 <label>Amount:</label>
                 <input id="numberAmount" type="number" name="quantityAmount"></input>
             </div>
         </form>
+        <table class="tableContainer">
+            <thead>
+                <tr class="transactionRow">
+                    <th class="nameColumn">Name</th>
+                    <th class="categoryColumn">Category</th>
+                    <th class="amountColumn">Amount</th>
+                    <th class="trashColumn">Trash</th>
+                </tr>
+            </thead>
+            <tbody class="transactions"></tbody>
+        </table>
     </section>
 
     <section class="categories-section">
