@@ -25,13 +25,22 @@ h1 {
   border: 1px solid black;
 }
 
+.transactionRow {
+  text-align: center;
+}
+
 .transactionList {
   border: 2px solid black;
   height: 40%;
   width: 95%;
   display: flex;
   flex-direction: column;
+  padding: 3%;
 }
 
-#subcontainer {
+#transaction {
+  width: 300px;
+}
+
+# {
 }
