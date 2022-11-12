@@ -8,6 +8,7 @@ let foodAdd = document.querySelector("#foodForm");
 let clothingAdd = document.querySelector("#clothingForm");
 let entertainmentAdd = document.querySelector("#entertainmentForm");
 let formBudget = document.querySelector("#maxBudget");
+let reset = document.getElementById("reset");
 
 //Variables
 let billsExpenses = 0;
@@ -16,6 +17,7 @@ let clothingExpenses = 0;
 let entertainmentExpenses = 0;
 let startBudget = 0;
 let remainingBudget = 0;
+let totalSpent = 0;
 
 //Listeners
 billAdd.addEventListener("submit", bills);
@@ -24,7 +26,10 @@ clothingAdd.addEventListener("submit", clothing);
 entertainmentAdd.addEventListener("submit", entertainment);
 formBudget.addEventListener("submit", setStartingBudget);
 formBudget.addEventListener("submit", setRemainingBudget);
+formBudget.addEventListener("submit", toggleFormsDisabled(false));
+reset.addEventListener("click", resetAll);
 
+toggleFormsDisabled(true);
 //Budget Functions
 function setStartingBudget(event) {
   event.preventDefault();
@@ -34,6 +39,10 @@ function setStartingBudget(event) {
   document.getElementById(
     "start"
   ).innerText = `Starting Budget: $${budgetInput}`;
+
+  if (remainingBudget === 0) {
+    toggleFormsDisabled(false);
+  }
 }
 
 function setRemainingBudget(event) {
@@ -62,6 +71,8 @@ function bills(event) {
 
   //create new element for the expense to display
   let newExpense = document.createElement("p");
+  newExpense.classList.add("remove");
+  newExpense.appendChild;
   newExpense.innerText = `${expense.name}: $${expense.amount.toFixed(2)}`;
   categoryBills.append(newExpense);
 
@@ -79,10 +90,16 @@ function bills(event) {
     "remaining"
   ).innerText = `Remaining Budget: $${remainingBudget}`;
 
+  totalSpent += billInput;
+  document.getElementById("spent").innerText = `Total Spent: $${totalSpent}`;
+
   if (remainingBudget < 0) {
     alert("Your Remaining budget is in the negative!");
   } else if (remainingBudget === 0) {
     alert("You are now at 0. You cannot add anything else!");
+  }
+  if (remainingBudget <= 0) {
+    toggleFormsDisabled(true);
   }
 }
 
@@ -99,6 +116,8 @@ function food(event) {
 
   //create new element for the expense to display
   let newExpense = document.createElement("p");
+  newExpense.classList.add("remove");
+  newExpense.appendChild;
   newExpense.innerText = `${expense.name}: $${expense.amount.toFixed(2)}`;
   categoryFood.append(newExpense);
 
@@ -116,10 +135,16 @@ function food(event) {
     "remaining"
   ).innerText = `Remaining Budget: $${remainingBudget}`;
 
+  totalSpent += foodsInput;
+  document.getElementById("spent").innerText = `Total Spent: $${totalSpent}`;
+
   if (remainingBudget < 0) {
     alert("Your Remaining budget is in the negative!");
   } else if (remainingBudget === 0) {
     alert("You are now at 0. You cannot add anything else!");
+  }
+  if (remainingBudget <= 0) {
+    toggleFormsDisabled(true);
   }
 }
 
@@ -136,6 +161,8 @@ function clothing(event) {
 
   //create new element for the expense to display
   let newExpense = document.createElement("p");
+  newExpense.classList.add("remove");
+  newExpense.appendChild;
   newExpense.innerText = `${expense.name}: $${expense.amount.toFixed(2)}`;
   categoryClothing.append(newExpense);
 
@@ -153,10 +180,16 @@ function clothing(event) {
     "remaining"
   ).innerText = `Remaining Budget: $${remainingBudget}`;
 
+  totalSpent += clothingsInput;
+  document.getElementById("spent").innerText = `Total Spent: $${totalSpent}`;
+
   if (remainingBudget < 0) {
     alert("Your Remaining budget is in the negative!");
   } else if (remainingBudget === 0) {
     alert("You are now at 0. You cannot add anything else!");
+  }
+  if (remainingBudget <= 0) {
+    toggleFormsDisabled(true);
   }
 }
 
@@ -173,6 +206,8 @@ function entertainment(event) {
 
   //create new element for the expense to display
   let newExpense = document.createElement("p");
+  newExpense.classList.add("remove");
+  newExpense.appendChild;
   newExpense.innerText = `${expense.name}: $${expense.amount.toFixed(2)}`;
   categoryEntertainment.append(newExpense);
 
@@ -192,9 +227,55 @@ function entertainment(event) {
     "remaining"
   ).innerText = `Remaining Budget: $${remainingBudget}`;
 
+  totalSpent += entertainmentsInput;
+  document.getElementById("spent").innerText = `Total Spent: $${totalSpent}`;
+
   if (remainingBudget < 0) {
     alert("Your Remaining budget is in the negative!");
   } else if (remainingBudget === 0) {
     alert("You are now at 0. You cannot add anything else!");
   }
+  if (remainingBudget <= 0) {
+    toggleFormsDisabled(true);
+  }
+}
+
+function toggleFormsDisabled(state) {
+  let addItemForms = document.querySelectorAll("form.add-item");
+  for (let form of addItemForms) {
+    for (let element of form.children) {
+      element.disabled = state;
+    }
+  }
+}
+
+function resetAll() {
+  billsExpenses = 0;
+  foodExpenses = 0;
+  clothingExpenses = 0;
+  entertainmentExpenses = 0;
+  startBudget = 0;
+  remainingBudget = 0;
+  totalSpent = 0;
+
+  //new starting
+  document.getElementById("start").innerText = `Starting Budget: $0`;
+  //new remaining
+  document.getElementById("remaining").innerText = `Remaining Budget: $0`;
+  //new bills
+  document.getElementById("billsTotal").innerText = `$0`;
+  //new food
+  document.getElementById("foodTotal").innerText = `$0`;
+  //new clothing
+  document.getElementById("clothingTotal").innerText = `$0`;
+  //new entertainment
+  document.getElementById("entertainmentTotal").innerText = `$0`;
+  //total spent
+  document.getElementById("spent").innerText = `Total Spent: $0`;
+
+  let element = document.querySelectorAll(".remove");
+
+  element.forEach((remove) => {
+    remove.remove();
+  });
 }
