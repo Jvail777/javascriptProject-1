@@ -17,11 +17,7 @@
         <p id="start">Starting Budget : $0</p>
         <p id="remaining">Remaining Budget: $0</p>
         <form id="maxBudget">
-            
-                <label>Starting Budget:</label>
-                <input id="number" type="number" name="quantity"></input>
-                
-            
+                <input id="number" type="number" name="quantity" placeholder="Enter budget here"></input>
             <button id="button" class="myButton">Set Budget</button>
         </form>
     </section>
@@ -63,61 +59,61 @@
     </section>
 
     <section class="categories-section">
-        <div class="category bills">
+        <div id="categoryBills" class="category bills">
           <div class="section-title">
             <p>Bills</p>
-            <p class="section-total bills">$0</p>
+            <p id="billsTotal" class="section-total bills">$0</p>
           </div>
   
-          <form class="add-item bills">
-            <input type="text" placeholder="Item Name">
-            <input type="number" placeholder="Item Cost">
-            <button class="myButton" category="bills">+</button>
+          <form id="billForm" class="add-item bills">
+            <input id="billName" type="text" placeholder="Item Name">
+            <input id="billsInput" type="number" placeholder="Item Cost">
+            <button id="billButton" class="myButton" category="bills">+</button>
           </form>
   
           <ul class="item-list bills"></ul>
         </div>
   
-        <div class="category food">
+        <div id="categoryFood" class="category food">
           <div class="section-title">
             <p>Food</p>
-            <p class="section-total food">$0</p>
+            <p id="foodTotal" class="section-total food">$0</p>
           </div>
   
-          <form class="add-item food">
-            <input type="text" placeholder="Item Name">
-            <input type="number" placeholder="Item Cost">
-            <button class="myButton" category="food">+</button>
+          <form id="foodForm" class="add-item food">
+            <input id="foodName" type="text" placeholder="Item Name">
+            <input id="foodInput" type="number" placeholder="Item Cost">
+            <button id="foodButton" class="myButton" category="food">+</button>
           </form>
   
           <ul class="item-list food"></ul>
         </div>
   
-        <div class="category clothing">
-          <div class="section-title">
+        <div id="categoryClothing" class="category clothing">
+          <div id="sectionClothing"  class="section-title">
             <p>Clothing</p>
-            <p class="section-total clothing">$0</p>
+            <p id="clothingTotal" class="section-total clothing">$0</p>
           </div>
   
-          <form class="add-item clothing">
-            <input type="text" placeholder="Item Name">
-            <input type="number" placeholder="Item Cost">
-            <button class="myButton" category="clothing">+</button>
+          <form id="clothingForm" class="add-item clothing">
+            <input id="clothingName" type="text" placeholder="Item Name">
+            <input id="clothingInput" type="number" placeholder="Item Cost">
+            <button id="clothingButton" class="myButton" category="clothing">+</button>
           </form>
           
           <ul class="item-list clothing"></ul>
         </div>
   
-        <div class="category entertainment">
-          <div class="section-title">
+        <div id="categoryEntertainment" class="category entertainment">
+          <div id="sectionEntertainment" class="section-title">
             <p>Entertainment</p>
-            <p class="section-total entertainment">$0</p>
+            <p id="entertainmentTotal" class="section-total entertainment">$0</p>
           </div>
   
-          <form class="add-item entertainment">
-            <input type="text" placeholder="Item Name">
-            <input type="number" placeholder="Item Cost">
-            <button class="myButton" category="entertainment">+</button>
+          <form id="entertainmentForm" class="add-item entertainment">
+            <input id="entertainmentName" type="text" placeholder="Item Name">
+            <input id="entertainmentInput" type="number" placeholder="Item Cost">
+            <button id="entertainmentButton" class="myButton" category="entertainment">+</button>
           </form>
   
           <ul class="item-list entertainment"></ul>
