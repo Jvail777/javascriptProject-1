@@ -28,6 +28,7 @@ formBudget.addEventListener("submit", setStartingBudget);
 formBudget.addEventListener("submit", setRemainingBudget);
 formBudget.addEventListener("submit", toggleFormsDisabled(false));
 reset.addEventListener("click", resetAll);
+reset.addEventListener("click", clearInput);
 
 toggleFormsDisabled(true);
 //Budget Functions
@@ -101,6 +102,7 @@ function bills(event) {
   if (remainingBudget <= 0) {
     toggleFormsDisabled(true);
   }
+  document.getElementById("billForm").reset();
 }
 
 function food(event) {
@@ -146,6 +148,7 @@ function food(event) {
   if (remainingBudget <= 0) {
     toggleFormsDisabled(true);
   }
+  document.getElementById("foodForm").reset();
 }
 
 function clothing(event) {
@@ -191,6 +194,7 @@ function clothing(event) {
   if (remainingBudget <= 0) {
     toggleFormsDisabled(true);
   }
+  document.getElementById("clothingForm").reset();
 }
 
 function entertainment(event) {
@@ -238,6 +242,7 @@ function entertainment(event) {
   if (remainingBudget <= 0) {
     toggleFormsDisabled(true);
   }
+  document.getElementById("entertainmentForm").reset();
 }
 
 function toggleFormsDisabled(state) {
@@ -278,4 +283,12 @@ function resetAll() {
   element.forEach((remove) => {
     remove.remove();
   });
+}
+
+function clearInput() {
+  document.getElementById("billForm").reset();
+  document.getElementById("foodForm").reset();
+  document.getElementById("clothingForm").reset();
+  document.getElementById("entertainmentForm").reset();
+  document.getElementById("maxBudget").reset();
 }
