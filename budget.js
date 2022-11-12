@@ -1,3 +1,4 @@
+//Selectors
 let billsInput = document.querySelector("#billsInput");
 let foodInput = document.querySelector("#foodInput");
 let clothingInput = document.querySelector("#clothingInput");
@@ -6,21 +7,48 @@ let billAdd = document.querySelector("#billForm");
 let foodAdd = document.querySelector("#foodForm");
 let clothingAdd = document.querySelector("#clothingForm");
 let entertainmentAdd = document.querySelector("#entertainmentForm");
+let formBudget = document.querySelector("#maxBudget");
 
-// let foodTotal = Document.querySelector("#foodTotal");
-// let clothingTotal = Document.querySelector("#clothingTotal");
-// let entertainmentTotal = Document.querySelector("#entertainmentTotal");
-
+//Variables
 let billsExpenses = 0;
 let foodExpenses = 0;
 let clothingExpenses = 0;
 let entertainmentExpenses = 0;
+let startBudget = 0;
+let remainingBudget = 0;
 
+//Listeners
 billAdd.addEventListener("submit", bills);
 foodAdd.addEventListener("submit", food);
 clothingAdd.addEventListener("submit", clothing);
 entertainmentAdd.addEventListener("submit", entertainment);
+formBudget.addEventListener("submit", setStartingBudget);
+formBudget.addEventListener("submit", setRemainingBudget);
 
+//Budget Functions
+function setStartingBudget(event) {
+  event.preventDefault();
+  let input = document.querySelector("#number");
+  let budgetInput = Number(input.value);
+
+  document.getElementById(
+    "start"
+  ).innerText = `Starting Budget: $${budgetInput}`;
+}
+
+function setRemainingBudget(event) {
+  event.preventDefault();
+  let input = document.querySelector("#number");
+  let budgetInput = Number(input.value);
+
+  remainingBudget += budgetInput;
+
+  document.getElementById(
+    "remaining"
+  ).innerText = `Remaining Budget: $${budgetInput}`;
+}
+
+//Other Functions
 function bills(event) {
   event.preventDefault();
 
@@ -42,6 +70,20 @@ function bills(event) {
   billsExpenses += billInput;
 
   document.getElementById("billsTotal").innerText = `$${billsExpenses}`;
+
+  let remainingBudgets = billInput;
+
+  remainingBudget -= remainingBudgets;
+
+  document.getElementById(
+    "remaining"
+  ).innerText = `Remaining Budget: $${remainingBudget}`;
+
+  if (remainingBudget < 0) {
+    alert("Your Remaining budget is in the negative!");
+  } else if (remainingBudget === 0) {
+    alert("You are now at 0. You cannot add anything else!");
+  }
 }
 
 function food(event) {
@@ -65,6 +107,20 @@ function food(event) {
   foodExpenses += foodsInput;
 
   document.getElementById("foodTotal").innerText = `$${foodExpenses}`;
+
+  let remainingBudgets = foodsInput;
+
+  remainingBudget -= remainingBudgets;
+
+  document.getElementById(
+    "remaining"
+  ).innerText = `Remaining Budget: $${remainingBudget}`;
+
+  if (remainingBudget < 0) {
+    alert("Your Remaining budget is in the negative!");
+  } else if (remainingBudget === 0) {
+    alert("You are now at 0. You cannot add anything else!");
+  }
 }
 
 function clothing(event) {
@@ -83,11 +139,25 @@ function clothing(event) {
   newExpense.innerText = `${expense.name}: $${expense.amount.toFixed(2)}`;
   categoryClothing.append(newExpense);
 
-  let billInput = expense.amount;
+  let clothingsInput = expense.amount;
 
-  billsExpenses += billInput;
+  clothingExpenses += clothingsInput;
 
-  document.getElementById("billsTotal").innerText = `$${billsExpenses}`;
+  document.getElementById("clothingTotal").innerText = `$${clothingExpenses}`;
+
+  let remainingBudgets = clothingsInput;
+
+  remainingBudget -= remainingBudgets;
+
+  document.getElementById(
+    "remaining"
+  ).innerText = `Remaining Budget: $${remainingBudget}`;
+
+  if (remainingBudget < 0) {
+    alert("Your Remaining budget is in the negative!");
+  } else if (remainingBudget === 0) {
+    alert("You are now at 0. You cannot add anything else!");
+  }
 }
 
 function entertainment(event) {
@@ -106,9 +176,25 @@ function entertainment(event) {
   newExpense.innerText = `${expense.name}: $${expense.amount.toFixed(2)}`;
   categoryEntertainment.append(newExpense);
 
-  let billInput = expense.amount;
+  let entertainmentsInput = expense.amount;
 
-  billsExpenses += billInput;
+  entertainmentExpenses += entertainmentsInput;
 
-  document.getElementById("billsTotal").innerText = `$${billsExpenses}`;
+  document.getElementById(
+    "entertainmentTotal"
+  ).innerText = `$${entertainmentExpenses}`;
+
+  let remainingBudgets = entertainmentsInput;
+
+  remainingBudget -= remainingBudgets;
+
+  document.getElementById(
+    "remaining"
+  ).innerText = `Remaining Budget: $${remainingBudget}`;
+
+  if (remainingBudget < 0) {
+    alert("Your Remaining budget is in the negative!");
+  } else if (remainingBudget === 0) {
+    alert("You are now at 0. You cannot add anything else!");
+  }
 }
