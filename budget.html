@@ -10,7 +10,7 @@
 </head>
 
 <header>
-    <h1>Monthly Budget</h1>
+    <h1>Weekly Budget</h1>
 </header>
 <body>
     <section id="container" >
@@ -23,11 +23,11 @@
             <button id="button" class="myButton">Set Budget</button>
         </form>
     </section>
-    <section id="drop">
+    <!-- <section id="drop">
         <div class="dropdown">
                 <label id="mobilePurchase">Type of Purchase:</label>
-                    <button id="Drop" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
+                    <button id="Drop" class="myButton1  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Select Category
                     </button>
                     <ul class="dropdown-menu">
                       <li><button class="dropdown-item" type="button">Bills</button></li>
@@ -40,12 +40,11 @@
    
     <section class="transactionList">
         <form id="subcontainer">
-            <div>
                 <label>Transaction:</label>
-                <input id="transaction" type="text" name="transaction"></input>
+                <input id="transaction" class="table" type="text" name="transaction" style="margin-bottom: 0;"></input>
                 <label>Amount:</label>
-                <input id="numberAmount" type="number" name="quantityAmount"></input>
-            </div>
+                <input id="numberAmount" class="table" type="number" name="quantityAmount" style="margin-bottom: 0;"></input>
+                <button class="myButtonForm">+</button>
         </form>
         <table class="tableContainer">
             <thead>
@@ -58,12 +57,12 @@
             </thead>
             <tbody class="transactions"></tbody>
         </table>
-    </section>
+    </section> -->
 
     <section class="categories-section">
         <div id="categoryBills" class="category bills">
           <div class="section-title">
-            <p>Bills</p>
+            <p class="strong">Bills</p>
             <p id="billsTotal" class="section-total bills">$0</p>
           </div>
   
@@ -78,7 +77,7 @@
   
         <div id="categoryFood" class="category food">
           <div class="section-title">
-            <p>Food</p>
+            <p class="strong">Food</p>
             <p id="foodTotal" class="section-total food">$0</p>
           </div>
   
@@ -93,7 +92,7 @@
   
         <div id="categoryClothing" class="category clothing">
           <div id="sectionClothing"  class="section-title">
-            <p>Clothing</p>
+            <p class="strong">Clothing</p>
             <p id="clothingTotal" class="section-total clothing">$0</p>
           </div>
   
@@ -108,7 +107,7 @@
   
         <div id="categoryEntertainment" class="category entertainment">
           <div id="sectionEntertainment" class="section-title">
-            <p>Entertainment</p>
+            <p class="strong">Entertainment</p>
             <p id="entertainmentTotal" class="section-total entertainment">$0</p>
           </div>
   
