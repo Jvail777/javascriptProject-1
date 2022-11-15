@@ -46,6 +46,7 @@ function setStartingBudget(event) {
   }
 }
 
+//I like that you have these functions laid out so nice!
 function setRemainingBudget(event) {
   event.preventDefault();
   let input = document.querySelector("#number");
