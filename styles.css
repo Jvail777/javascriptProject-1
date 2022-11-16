@@ -115,10 +115,15 @@ h1 {
   padding-bottom: 20px;
 }
 
+#myChart {
+  width: 350px;
+  height: 350px;
+}
+
 #maxBudget {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   padding-bottom: 20px;
 }
 #start,

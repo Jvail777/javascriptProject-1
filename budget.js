@@ -292,3 +292,27 @@ function clearInput() {
   document.getElementById("entertainmentForm").reset();
   document.getElementById("maxBudget").reset();
 }
+
+// start of the pie chart
+
+const pieChart = document.getElementById("myChart");
+
+const chartNames = ["Entertainment", "Bills", "Clothing", "Food"];
+
+let chartData = [entertainmentInput, billsInput, foodInput, clothingInput];
+
+const pieColors = ["blue", "red", "green", "yellow"];
+
+new Chart(pieChart, {
+  type: "pie",
+  data: {
+    labels: chartNames,
+    datasets: [
+      {
+        backgroundColor: pieColors,
+        borderWidth: 0,
+        data: chartData,
+      },
+    ],
+  },
+});
