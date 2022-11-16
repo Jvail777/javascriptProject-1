@@ -29,6 +29,7 @@ formBudget.addEventListener("submit", setRemainingBudget);
 formBudget.addEventListener("submit", toggleFormsDisabled(false));
 reset.addEventListener("click", resetAll);
 reset.addEventListener("click", clearInput);
+reset.addEventListener("click", resetInput);
 
 toggleFormsDisabled(true);
 //Budget Functions
@@ -291,4 +292,8 @@ function clearInput() {
   document.getElementById("clothingForm").reset();
   document.getElementById("entertainmentForm").reset();
   document.getElementById("maxBudget").reset();
+}
+
+function resetInput() {
+  toggleFormsDisabled(true);
 }
