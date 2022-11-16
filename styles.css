@@ -115,11 +115,6 @@ h1 {
   padding-bottom: 20px;
 }
 
-#myChart {
-  width: 350px;
-  height: 350px;
-}
-
 #maxBudget {
   display: flex;
   flex-direction: column;
@@ -258,6 +253,7 @@ h1 {
     position: relative;
     top: 1px;
   }
+
   /* Table Properties */
   .transactionList {
     display: none;

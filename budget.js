@@ -306,12 +306,12 @@ const pieColors = ["blue", "red", "green", "yellow"];
 new Chart(pieChart, {
   type: "pie",
   data: {
-    labels: chartNames,
+    labels: ["Entertainment", "Bills", "Clothing", "Food"],
     datasets: [
       {
-        backgroundColor: pieColors,
+        backgroundColor: ["blue", "red", "green", "yellow"],
         borderWidth: 0,
-        data: chartData,
+        data: [entertainmentInput, billsInput, foodInput, clothingInput],
       },
     ],
   },
