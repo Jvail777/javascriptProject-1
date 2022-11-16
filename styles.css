@@ -120,7 +120,7 @@ h1 {
 #maxBudget {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   padding-bottom: 20px;
 }
 #start,
@@ -255,6 +255,7 @@ h1 {
     position: relative;
     top: 1px;
   }
+
   /* Table Properties */
   .transactionList {
     display: none;

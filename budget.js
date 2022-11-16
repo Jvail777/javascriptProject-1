@@ -294,6 +294,31 @@ function clearInput() {
   document.getElementById("maxBudget").reset();
 }
 
+// start of the pie chart
+
+const pieChart = document.getElementById("myChart");
+
+const chartNames = ["Entertainment", "Bills", "Clothing", "Food"];
+
+let chartData = [entertainmentInput, billsInput, foodInput, clothingInput];
+
+const pieColors = ["blue", "red", "green", "yellow"];
+
+new Chart(pieChart, {
+  type: "pie",
+  data: {
+    labels: ["Entertainment", "Bills", "Clothing", "Food"],
+    datasets: [
+      {
+        backgroundColor: ["blue", "red", "green", "yellow"],
+        borderWidth: 0,
+        data: [entertainmentInput, billsInput, foodInput, clothingInput],
+      },
+    ],
+  },
+});
+
 function resetInput() {
   toggleFormsDisabled(true);
 }
+
