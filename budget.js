@@ -29,6 +29,7 @@ formBudget.addEventListener("submit", setRemainingBudget);
 formBudget.addEventListener("submit", toggleFormsDisabled(false));
 reset.addEventListener("click", resetAll);
 reset.addEventListener("click", clearInput);
+reset.addEventListener("click", resetInput);
 
 toggleFormsDisabled(true);
 //Budget Functions
@@ -316,3 +317,8 @@ new Chart(pieChart, {
     ],
   },
 });
+
+function resetInput() {
+  toggleFormsDisabled(true);
+}
+
