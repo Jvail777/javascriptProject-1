@@ -31,6 +31,7 @@ formBudget.addEventListener("submit", setRemainingBudget);
 formBudget.addEventListener("submit", toggleFormsDisabled(false));
 reset.addEventListener("click", resetAll);
 reset.addEventListener("click", clearInput);
+reset.addEventListener("click", resetInput);
 
 toggleFormsDisabled(true);
 //Budget Functions
@@ -302,6 +303,13 @@ function clearInput() {
   document.getElementById("maxBudget").reset();
 }
 
+<<<<<<< HEAD
+
+=======
+function resetInput() {
+  toggleFormsDisabled(true);
+}
+
 // start of the pie chart
 
 // const chartNames = ["Entertainment", "Bills", "Clothing", "Food"];
@@ -336,3 +344,4 @@ function clearInput() {
 //     },
 //   })
 // };
+>>>>>>> 2c56dcd75e613ed343d63441a3c6b774d8ec0ffa
