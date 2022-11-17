@@ -1,3 +1,5 @@
+// const { Chart } = require("chart.js");
+
 //Selectors
 let billsInput = document.querySelector("#billsInput");
 let foodInput = document.querySelector("#foodInput");
@@ -104,6 +106,13 @@ function bills(event) {
     toggleFormsDisabled(true);
   }
   document.getElementById("billForm").reset();
+  console.log(billsExpenses);
+  chartMaker(
+    entertainmentExpenses,
+    billsExpenses,
+    foodExpenses,
+    clothingExpenses
+  );
 }
 
 function food(event) {
@@ -294,6 +303,45 @@ function clearInput() {
   document.getElementById("maxBudget").reset();
 }
 
+<<<<<<< HEAD
+
+=======
 function resetInput() {
   toggleFormsDisabled(true);
 }
+
+// start of the pie chart
+
+// const chartNames = ["Entertainment", "Bills", "Clothing", "Food"];
+
+// let chartData = [entertainmentInput, billsInput, foodInput, clothingInput];
+
+// const pieColors = ["blue", "red", "green", "yellow"];
+
+// function chartMaker(
+//   entertainmentExpenses,
+//   billsExpenses,
+//   foodExpenses,
+//   clothingExpenses
+// ) {
+//   const pieChart = document.getElementById("myChart");
+//   new Chart(pieChart, {
+//     type: "pie",
+//     data: {
+//       labels: ["Entertainment", "Bills", "Clothing", "Food"],
+//       datasets: [
+//         {
+//           backgroundColor: ["blue", "red", "green", "yellow"],
+//           borderWidth: 0,
+//           data: [
+//             entertainmentExpenses,
+//             billsExpenses,
+//             foodExpenses,
+//             clothingExpenses,
+//           ],
+//         },
+//       ],
+//     },
+//   })
+// };
+>>>>>>> 2c56dcd75e613ed343d63441a3c6b774d8ec0ffa
