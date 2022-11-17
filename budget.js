@@ -1,3 +1,5 @@
+// const { Chart } = require("chart.js");
+
 //Selectors
 let billsInput = document.querySelector("#billsInput");
 let foodInput = document.querySelector("#foodInput");
@@ -103,6 +105,13 @@ function bills(event) {
     toggleFormsDisabled(true);
   }
   document.getElementById("billForm").reset();
+  console.log(billsExpenses);
+  chartMaker(
+    entertainmentExpenses,
+    billsExpenses,
+    foodExpenses,
+    clothingExpenses
+  );
 }
 
 function food(event) {
@@ -295,24 +304,35 @@ function clearInput() {
 
 // start of the pie chart
 
-const pieChart = document.getElementById("myChart");
+// const chartNames = ["Entertainment", "Bills", "Clothing", "Food"];
 
-const chartNames = ["Entertainment", "Bills", "Clothing", "Food"];
+// let chartData = [entertainmentInput, billsInput, foodInput, clothingInput];
 
-let chartData = [entertainmentInput, billsInput, foodInput, clothingInput];
+// const pieColors = ["blue", "red", "green", "yellow"];
 
-const pieColors = ["blue", "red", "green", "yellow"];
-
-new Chart(pieChart, {
-  type: "pie",
-  data: {
-    labels: ["Entertainment", "Bills", "Clothing", "Food"],
-    datasets: [
-      {
-        backgroundColor: ["blue", "red", "green", "yellow"],
-        borderWidth: 0,
-        data: [entertainmentInput, billsInput, foodInput, clothingInput],
-      },
-    ],
-  },
-});
+// function chartMaker(
+//   entertainmentExpenses,
+//   billsExpenses,
+//   foodExpenses,
+//   clothingExpenses
+// ) {
+//   const pieChart = document.getElementById("myChart");
+//   new Chart(pieChart, {
+//     type: "pie",
+//     data: {
+//       labels: ["Entertainment", "Bills", "Clothing", "Food"],
+//       datasets: [
+//         {
+//           backgroundColor: ["blue", "red", "green", "yellow"],
+//           borderWidth: 0,
+//           data: [
+//             entertainmentExpenses,
+//             billsExpenses,
+//             foodExpenses,
+//             clothingExpenses,
+//           ],
+//         },
+//       ],
+//     },
+//   })
+// };

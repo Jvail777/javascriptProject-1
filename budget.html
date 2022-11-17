@@ -7,7 +7,8 @@
     <title>Monthly Budget</title>
     <link rel="stylesheet" href="styles.css"></link>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 </head>
 
 <header>
@@ -97,22 +98,15 @@
   const ctx = document.getElementById('myChart');
 
   new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: ["Entertainment", "Bills", "Clothing", "Food"],
       datasets: [{
-        label: '# of Votes',
-        data: [entertainmentInput, billsInput, foodInput, clothingInput],
-        borderWidth: 1
+        backgroundColor: ["blue", "red", "green", "yellow"],
+        data: [entertainmentExpenses, billsExpenses, foodExpenses, clothingExpenses],
+        borderWidth: 0,
       }]
     },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
   });
 </script> -->
 
